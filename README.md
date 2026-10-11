@@ -11,10 +11,5 @@ Sukoon supports prayer times, Qibla, the Quran, Athkar, widgets and Apple Watch.
 
 Issues are public; do not post personal worship records, precise home coordinates, phone numbers, or other sensitive data.
 
-## Privacy document source of truth
-Canonical English and Arabic policies are stored in the private **SeMoOo/Sukoon** application repository as `PRIVACY_POLICY.md` and `PRIVACY_POLICY_AR.md` (both `main` and `release/sukoon-recovery`). This public support repository republishes them as a bilingual HTML page for App Store users.
-
-## Enable GitHub Pages
-From this repository, open **Settings → Pages**, select **Deploy from a branch**, branch **main**, folder **/ (root)**, then save.
 
 © 2026 Sukoon Team.
