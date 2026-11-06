@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071421">
+  <meta name="description" content="Sarfi support and privacy information — a private, local-first spending tracker.">
+  <title>Sarfi — Support &amp; Privacy | صرفي</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --background: #071421;
+      --surface: #122130;
+      --surface-raised: #182838;
+      --text: #f4f7fa;
+      --muted: #aab4c0;
+      --accent: #43d17a;
+      --separator: #273747;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font: 17px/1.72 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: var(--accent); text-underline-offset: .2em; }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    main { width: min(900px, 100%); margin: 0 auto; padding: 52px 24px 40px; }
+    header { border-bottom: 1px solid var(--separator); padding-bottom: 28px; }
+    .brand { color: var(--accent); font-size: 15px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { margin: 8px 0 4px; font-size: clamp(36px, 8vw, 54px); line-height: 1.12; letter-spacing: -.035em; }
+    h2 { margin: 0 0 10px; font-size: clamp(26px, 5vw, 34px); line-height: 1.2; }
+    h3 { margin: 24px 0 5px; font-size: 19px; line-height: 1.35; }
+    p, li { color: var(--muted); }
+    .tagline { margin: 8px 0 0; max-width: 680px; font-size: 19px; }
+    nav { display: flex; flex-wrap: wrap; gap: 12px 22px; margin-top: 22px; }
+    nav a { font-weight: 650; }
+    section { padding: 34px 0; border-bottom: 1px solid var(--separator); scroll-margin-top: 16px; }
+    .card { margin: 18px 0; padding: 20px 22px; border-radius: 16px; background: var(--surface); }
+    .notice { border-inline-start: 3px solid var(--accent); background: var(--surface-raised); }
+    .card p:last-child, .card ul:last-child { margin-bottom: 0; }
+    ul { padding-inline-start: 24px; }
+    li + li { margin-top: 5px; }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 48px; padding: 10px 18px; border-radius: 12px;
+      background: var(--accent); color: #071421; font-weight: 750;
+      text-decoration: none;
+    }
+    .button:hover { filter: brightness(1.06); }
+    .small { font-size: 14px; }
+    .ar { direction: rtl; text-align: right; }
+    .ar ul { padding-inline-start: 0; padding-inline-end: 24px; }
+    .ar .notice { border-inline-start: 0; border-inline-end: 3px solid var(--accent); }
+    footer { padding-top: 24px; color: var(--muted); font-size: 14px; }
+    .skip { position: absolute; inset-inline-start: -9999px; top: 8px; }
+    .skip:focus { inset-inline-start: 8px; z-index: 2; padding: 8px 12px; background: var(--surface); }
+    @media (max-width: 540px) {
+      main { padding: 32px 18px 28px; }
+      .card { padding: 16px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#support">Skip to support</a>
+  <main>
+    <header>
+      <div class="brand">Sarfi · صرفي</div>
+      <h1>Spending clarity.<br>Private by design.</h1>
+      <p class="tagline">Support and privacy information for Sarfi, a local-first spending tracker for iPhone, widgets and Apple Watch.</p>
+      <nav aria-label="Page sections">
+        <a href="#support">Support</a>
+        <a href="#privacy">Privacy</a>
+        <a href="marketing/">Store preview</a>
+        <a href="#arabic" lang="ar" dir="rtl">العربية</a>
+      </nav>
+    </header>
+
+    <section id="support" aria-labelledby="support-title">
+      <h2 id="support-title">Support</h2>
+      <p>Need help with Sarfi? Email Sarfi support at bassam.zidan@yahoo.com. Send only a brief description and a redacted example if needed.</p>
+      <p><a class="button" href="mailto:bassam.zidan@yahoo.com?subject=Sarfi%20Support" target="_blank" rel="noopener noreferrer">Request Sarfi support</a></p>
+
+      <div class="card notice">
+        <strong>Protect your financial information.</strong>
+        <p>Never post banking passwords, one-time passwords, verification codes, full card or account numbers, private exports, or unredacted bank messages. Remove names and identifiers from examples.</p>
+      </div>
+
+      <h3>Why are transactions not appearing automatically?</h3>
+      <p>Sarfi cannot directly read Wallet history or your Messages inbox. In Sarfi, open <strong>Settings → Automatic Capture</strong>, configure the relevant payment source, then create and approve a personal automation in Apple Shortcuts using a Sarfi capture action. iOS controls trigger availability and confirmation.</p>
+
+      <h3>How do I test a bank-message format safely?</h3>
+      <p>Open <strong>Settings → Automatic Capture → Test Your Bank Message</strong>. Use a redacted example. The test uses an isolated in-memory store and does not add a transaction to your records. You can also run the built-in sample test.</p>
+
+      <h3>Does Sarfi identify transaction currencies?</h3>
+      <p>Yes. Sarfi uses a currency code or symbol found in a supplied bank message, or the currency passed to it by an Apple Pay Shortcut. If no currency is supplied or recognized, the capture defaults to SAR and may need review. Sarfi preserves original currencies and does not convert or combine different currencies in totals.</p>
+
+      <h3>Why does Storage &amp; Sync show Local Only?</h3>
+      <p>The device may not be signed into iCloud, iCloud may be unavailable, or the CloudKit container may not be configured for the installed build. Sarfi remains usable locally and does not erase data because synchronization is unavailable.</p>
+
+      <h3>Why is a transaction marked for review?</h3>
+      <p>Sarfi flags ambiguous amounts, merchants, payment sources and possible duplicates instead of silently changing or deleting financial records. Open the transaction, correct any details and accept it when it is accurate.</p>
+
+      <h3>How do I export or delete my data?</h3>
+      <p>Open <strong>Settings</strong>. Use <strong>Export Transactions</strong> for a CSV copy or <strong>Delete All Data</strong> to remove Sarfi financial records from the active local/iCloud store.</p>
+
+      <h3>What should I include in a support request?</h3>
+      <ul>
+        <li>Sarfi version/build, iPhone model and iOS version</li>
+        <li>Whether Storage &amp; Sync shows iCloud Sync or Local Only</li>
+        <li>Capture method and the steps that led to the issue</li>
+        <li>The exact visible error, plus a redacted message format if relevant</li>
+      </ul>
+    </section>
+
+    <section id="privacy" aria-labelledby="privacy-title">
+      <h2 id="privacy-title">Privacy policy</h2>
+      <p><strong>Effective date: November 6, 2026.</strong></p>
+      <p>Sarfi is designed to help you understand personal spending while keeping financial information under your control. This policy covers the iPhone app, widgets and Apple Watch companion.</p>
+
+      <h3>Information handled by Sarfi</h3>
+      <p>Sarfi may process transaction details you enter or choose to pass through Apple Shortcuts, such as amount, currency, merchant, date, transaction type, sender identifier, the last four digits of a card/account, category and notes. Sarfi does not request or store full card numbers, full bank-account numbers, banking passwords, one-time passwords or verification codes.</p>
+
+      <h3>Automatic capture</h3>
+      <p>Sarfi does not access Apple Wallet history, the Messages database or notifications from other apps. Automatic capture works only through a compatible personal automation that you create and approve in Apple Shortcuts. Bank-message text supplied by a shortcut is processed on-device in memory; Sarfi discards the original message after parsing.</p>
+
+      <h3>Storage and synchronization</h3>
+      <p>Financial records are stored locally on your device. If private iCloud synchronization is available, records may sync through your Apple account and private CloudKit database. Sarfi has no separate account system or developer-operated transaction backend. Apple services are governed by Apple’s own privacy terms.</p>
+
+      <h3>Data collected by the developer</h3>
+      <p>The Sarfi developer does not collect your transaction records, payment-source details, usage history or identifiers from the app. Sarfi has no advertising SDKs, third-party transaction analytics, cross-app tracking or data-broker integrations.</p>
+      <p>Optional merchant-logo lookup uses Logo.dev and is off by default. You must enable it in Settings and approve each merchant separately. Sarfi sends Logo.dev only the cleaned merchant name—not transaction details. Logo.dev also receives the request IP address and timestamp. Its privacy policy says request logs are deleted within 120 days; security and audit logs that may include IP addresses are deleted within 400 days. Sarfi keeps fetched images in memory only. Turning the setting off clears local approvals and prevents future requests, but cannot erase requests already received by Logo.dev. The Sarfi developer does not receive these CDN requests. See <a href="https://www.logo.dev/legal/privacy" target="_blank" rel="noopener noreferrer">Logo.dev’s privacy policy</a>.</p>
+
+      <h3>Widgets, Watch, export and deletion</h3>
+      <p>Sarfi shares a limited summary with its widget and Apple Watch companion using Apple-provided device communication and App Group storage. Privacy redaction can hide financial values. You can export visible transactions as CSV, correct or delete individual records, and delete Sarfi financial data from Settings. iCloud deletion changes may sync according to Apple’s CloudKit behavior and network availability.</p>
+
+      <h3>Support and this website</h3>
+      <p>This static support site is hosted by GitHub Pages. If you open a GitHub support issue, GitHub processes the information you submit under its own privacy policy. Issues are public; do not include sensitive financial or identity information. A visit to this site does not send Sarfi transaction data to the developer.</p>
+
+      <h3>Security, children and changes</h3>
+      <p>Sarfi supports optional Face ID/device-passcode authentication and an app-switcher privacy shield. Keep your device and Apple account secure. Sarfi is a general personal-finance utility, not directed specifically to children. This policy may be updated when app features or legal obligations change; the effective date will be revised for material updates.</p>
+
+      <p class="small">Questions? <a href="mailto:bassam.zidan@yahoo.com?subject=Sarfi%20Support" target="_blank" rel="noopener noreferrer">Email Sarfi support</a>. Use a redacted example when contacting support.</p>
+    </section>
+
+    <section id="arabic" class="ar" lang="ar" dir="rtl" aria-labelledby="support-ar-title">
+      <h2 id="support-ar-title">الدعم والخصوصية</h2>
+      <p>صرفي تطبيق خاص يعتمد على التخزين المحلي أولاً لتتبّع المصروفات على iPhone وأدوات الشاشة وApple Watch.</p>
+      <p><a class="button" href="mailto:bassam.zidan@yahoo.com?subject=Sarfi%20Support" target="_blank" rel="noopener noreferrer">التواصل مع دعم صرفي بالبريد</a></p>
+
+      <div class="card notice">
+        <strong>احمِ معلوماتك المالية.</strong>
+        <p>أرسل وصفاً موجزاً ومثالاً منقحاً عند الحاجة. لا تنشر كلمات المرور البنكية أو رموز التحقق أو أرقام البطاقات والحسابات الكاملة أو الرسائل البنكية غير المنقحة أو ملفات التصدير الخاصة. أزل الأسماء والمعرّفات من الأمثلة.</p>
+      </div>
+
+      <h3>لماذا لا تظهر العمليات تلقائياً؟</h3>
+      <p>لا يستطيع صرفي قراءة سجل Wallet أو صندوق الرسائل مباشرة. افتح <strong>الإعدادات ← التسجيل التلقائي</strong>، وأضف مصدر الدفع المناسب، ثم أنشئ أتمتة شخصية ووافق عليها في تطبيق اختصارات Apple باستخدام إجراء من صرفي. يتحكم iOS بتوفر المشغلات ومتطلبات التأكيد.</p>
+
+      <h3>كيف أختبر صيغة رسالة بنكية بأمان؟</h3>
+      <p>افتح <strong>الإعدادات ← التسجيل التلقائي ← اختبار رسالتك البنكية</strong>، واستخدم مثالاً منقحاً. يستخدم الاختبار مخزناً مؤقتاً ومعزولاً ولا يضيف عملية إلى سجلاتك. يمكنك أيضاً تشغيل الاختبار التجريبي المضمن.</p>
+
+      <h3>هل يتعرّف صرفي على عملة العملية؟</h3>
+      <p>نعم. يستخدم صرفي رمز العملة أو علامتها إذا ظهرت في الرسالة البنكية المرسلة، أو العملة التي يمررها اختصار Apple Pay. إذا لم تُرسل العملة أو لم يتعرف عليها، يستخدم صرفي الريال السعودي افتراضياً وقد تحتاج العملية إلى مراجعة. يحتفظ صرفي بالعملات الأصلية ولا يحوّل العملات المختلفة أو يجمعها في الإجماليات.</p>
+
+      <h3>لماذا يظهر التخزين المحلي فقط؟</h3>
+      <p>قد لا يكون الجهاز مسجلاً في iCloud، أو قد تكون الخدمة غير متاحة، أو قد لا تكون حاوية CloudKit مهيأة للنسخة المثبتة. يبقى صرفي قابلاً للاستخدام محلياً ولا يحذف البيانات بسبب تعذر المزامنة.</p>
+
+      <h3>لماذا تحتاج العملية إلى مراجعة؟</h3>
+      <p>يضع صرفي علامة مراجعة على المبالغ أو المتاجر أو مصادر الدفع غير الواضحة وعلى العمليات المحتمل تكرارها، بدلاً من تغيير السجلات المالية أو حذفها بصمت. افتح العملية وصحّح البيانات ثم اقبلها عندما تصبح دقيقة.</p>
+
+      <h3>كيف أصدّر بياناتي أو أحذفها؟</h3>
+      <p>افتح <strong>الإعدادات</strong> واستخدم <strong>تصدير العمليات</strong> للحصول على ملف CSV، أو <strong>حذف جميع البيانات</strong> لإزالة السجلات المالية من التخزين المحلي أو iCloud النشط.</p>
+
+      <h3>ما المعلومات التي أرفقها بطلب الدعم؟</h3>
+      <ul>
+        <li>إصدار صرفي ورقم البناء وطراز iPhone وإصدار iOS</li>
+        <li>حالة التخزين والمزامنة</li>
+        <li>طريقة التسجيل والخطوات التي أدت إلى المشكلة</li>
+        <li>نص الخطأ الظاهر ومثال منقح لصيغة الرسالة عند الحاجة</li>
+      </ul>
+
+      <h2 id="privacy-ar-title">سياسة الخصوصية</h2>
+      <p><strong>تاريخ السريان: ٦ نوفمبر ٢٠٢٦.</strong></p>
+      <p>صُمّم صرفي لمساعدتك على فهم مصروفاتك مع إبقاء بياناتك المالية تحت سيطرتك. تشمل هذه السياسة تطبيق iPhone وأدوات الشاشة وتطبيق Apple Watch.</p>
+
+      <h3>المعلومات التي يعالجها صرفي</h3>
+      <p>قد يعالج صرفي تفاصيل العمليات التي تدخلها أو تختار تمريرها عبر اختصارات Apple، مثل المبلغ والعملة والمتجر والتاريخ ونوع العملية ومعرّف المرسل وآخر أربعة أرقام من البطاقة أو الحساب والفئة والملاحظات. لا يطلب صرفي ولا يخزن أرقام البطاقات والحسابات الكاملة أو كلمات المرور البنكية أو كلمات المرور لمرة واحدة أو رموز التحقق.</p>
+
+      <h3>التسجيل التلقائي</h3>
+      <p>لا يصل صرفي إلى سجل Apple Wallet أو قاعدة بيانات الرسائل أو إشعارات التطبيقات الأخرى. يعمل التسجيل التلقائي فقط عبر أتمتة شخصية متوافقة تنشئها وتوافق عليها في تطبيق اختصارات Apple. يعالج صرفي نص الرسالة البنكية الذي يمرره الاختصار محلياً في الذاكرة، ويتخلص من الرسالة الأصلية بعد التحليل.</p>
+
+      <h3>التخزين والمزامنة</h3>
+      <p>تُخزّن السجلات المالية محلياً على جهازك. وعند توفر المزامنة الخاصة عبر iCloud، قد تتم مزامنة السجلات عبر حساب Apple وقاعدة CloudKit الخاصة بك. لا يدير صرفي نظام حسابات خاصاً أو خادماً مالياً تابعاً للمطوّر. تخضع خدمات Apple لسياسات الخصوصية الخاصة بها.</p>
+
+      <h3>البيانات التي يجمعها المطوّر</h3>
+      <p>لا يجمع مطوّر صرفي سجلات العمليات أو تفاصيل مصادر الدفع أو سجل الاستخدام أو معرّفات من التطبيق. لا يحتوي صرفي على إعلانات أو تحليلات خارجية للعمليات المالية أو تتبع عبر التطبيقات أو تكاملات مع وسطاء البيانات.</p>
+      <p>يستخدم البحث الاختياري عن شعارات المتاجر خدمة Logo.dev، وهو متوقف افتراضياً. يجب تفعيله في الإعدادات والموافقة على كل متجر على حدة. يرسل صرفي إلى Logo.dev اسم المتجر المنقح فقط، وليس تفاصيل العملية. ويتلقى Logo.dev أيضاً عنوان IP ووقت الطلب. توضح سياسته أن سجلات الطلبات تُحذف خلال 120 يوماً، وأن سجلات الأمان والتدقيق التي قد تتضمن عناوين IP تُحذف خلال 400 يوم. يحتفظ صرفي بالصور في الذاكرة فقط. يؤدي إيقاف الخيار إلى مسح الموافقات المحلية ومنع الطلبات المستقبلية، لكنه لا يمحو الطلبات التي سبق أن استلمها Logo.dev. لا يستقبل مطوّر صرفي طلبات CDN هذه. راجع <a href="https://www.logo.dev/legal/privacy" target="_blank" rel="noopener noreferrer">سياسة خصوصية Logo.dev</a>.</p>
+
+      <h3>الأدوات والساعة والتصدير والحذف</h3>
+      <p>يشارك صرفي ملخصاً محدوداً مع أداة الشاشة وتطبيق Apple Watch باستخدام تقنيات Apple وتخزين App Group. ويمكنك إخفاء القيم المالية. يتيح صرفي تصدير العمليات الظاهرة بصيغة CSV وتصحيح السجلات الفردية أو حذفها وحذف بياناته المالية من الإعدادات. قد تتزامن تغييرات الحذف عبر iCloud وفق سلوك CloudKit وتوفر الشبكة.</p>
+
+      <h3>الدعم وهذا الموقع</h3>
+      <p>يستضيف GitHub Pages موقع الدعم الثابت هذا. إذا فتحت طلب دعم عبر GitHub، تعالج GitHub المعلومات التي ترسلها وفق سياسة الخصوصية الخاصة بها. الطلبات علنية؛ لا ترفق معلومات مالية أو شخصية حساسة. لا يرسل فتح هذا الموقع بيانات عمليات صرفي إلى المطوّر.</p>
+
+      <h3>الأمان والأطفال والتغييرات</h3>
+      <p>يدعم صرفي حماية اختيارية عبر Face ID أو رمز دخول الجهاز وشاشة خصوصية في مبدّل التطبيقات. حافظ على أمان جهازك وحساب Apple. صرفي أداة عامة للتمويل الشخصي وليست موجّهة تحديداً للأطفال. قد تُحدّث هذه السياسة عند تغيير الميزات أو الالتزامات القانونية، وسيُحدّث تاريخ السريان عند نشر تغيير جوهري.</p>
+
+      <p class="small">للاستفسارات، <a href="mailto:bassam.zidan@yahoo.com?subject=Sarfi%20Support" target="_blank" rel="noopener noreferrer">تواصل مع دعم صرفي بالبريد</a>. أرسل وصفاً موجزاً ومثالاً منقحاً عند الحاجة.</p>
+    </section>
+
+    <footer>© 2026 Sarfi · صرفي · <a href="https://logo.dev" target="_blank" rel="noopener noreferrer">Logos provided by Logo.dev</a></footer>
+  </main>
+</body>
+</html>
